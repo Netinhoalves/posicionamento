@@ -13,7 +13,7 @@ Este é um desafio proposto pelo professor [André Rafael](https://www.youtube.c
 - CSS FlexBox
 - CSS Grid Layout
 - Media-queries
-- Responsive Website
+- Layout Responsivo
 
 ## Acessar minha resolução
 
