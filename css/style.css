@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
 
 :root {
-  --fundo-cinza: #f1f1f1;
-  --fundo-branco: #ffffff;
-  --texto-cinza: #c6c6c6;
-  --texto-preto: #000000;
-  --vermelho: #ee2211;
-  --vermelho-escuro: #aa2211;
+  --fundo-primario: #f1f1f1;
+  --fundo-secundario: #ffffff;
+  --texto-primario: #000000;
+  --texto-secundario: rgba(0, 0, 0, 0.2);
+  --cor-primaria: #ee2211;
+  --cor-primaria-escuro: #aa2211;
   --transparente: #ffffff00;
+  --onda: url(../img/onda-clara.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-primario: #111;
+    --fundo-secundario: #000;
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.2);
+    --onda: url(../img/onda-escura.svg);
+  }
 }
 
 * {
@@ -23,7 +34,8 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: var(--fundo-cinza);
+  background-color: var(--fundo-primario);
+  color: var(--texto-primario);
   display: grid;
   justify-items: center;
   gap: 6rem;
@@ -59,8 +71,8 @@ nav ul {
 }
 
 nav ul li a {
-  background-color: var(--fundo-branco);
-  color: var(--texto-preto);
+  background-color: var(--fundo-secundario);
+  color: var(--texto-primario);
   display: block;
   padding: 1.5rem 3rem;
   /* margin: 0 1rem; */
@@ -70,7 +82,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  border-color: var(--vermelho);
+  border-color: var(--cor-primaria);
 }
 
 main .content {
@@ -93,7 +105,7 @@ main .content {
 }
 
 main .content .introduction  {
-  background-color: var(--fundo-branco);
+  background-color: var(--fundo-secundario);
   padding: 4rem;
   text-align: right;
   position: relative;
@@ -107,7 +119,7 @@ main .content .introduction::before {
   content: '';
   width: 6rem;
   height: .4rem;
-  background-color: var(--vermelho);
+  background-color: var(--cor-primaria);
   position: absolute;
   right: -3rem;
   top: 3rem;
@@ -128,15 +140,15 @@ main .content .introduction h1 {
 }
 
 main .content .introduction .button {
-  background-color: var(--vermelho);
-  color: var(--fundo-branco);
+  background-color: var(--cor-primaria);
+  color: #ffffff;
   padding: 1.5rem 3rem;
   border-radius: .4rem;
   text-transform: uppercase;
 }
 
 main .content .introduction .button:hover {
-  background-color: var(--vermelho-escuro);
+  background-color: var(--cor-primaria-escuro);
 }
 
 main .content img {
@@ -147,11 +159,11 @@ main .content img {
 main .content .subtitulo {
   font-size: 6.4rem;
   text-transform: uppercase;
-  color: var(--texto-cinza);
+  color: var(--texto-secundario);
   padding: 4rem;
   text-align: right;
   align-self: center;
-  background-image: url(../img/onda.svg);
+  background-image: var(--onda);
 }
 
 @media (max-width: 50.5rem) {
@@ -170,7 +182,7 @@ main .content .subtitulo {
 }
 
 main .content .advantage {
-  background: var(--fundo-branco);
+  background: var(--fundo-secundario);
   padding: 4rem;
 }
 
@@ -183,11 +195,11 @@ main .content .advantage .advantage-item {
 }
 
 main .content .advantage .advantage-item:nth-child(odd) {
-  background-color: var(--fundo-cinza);
+  background-color: var(--fundo-primario);
 }
 
 main .content .advantage .advantage-item:hover {
-  border-left: .4rem solid var(--vermelho);
+  border-left: .4rem solid var(--cor-primaria);
 }
 
 main .content .advantage .advantage-item p {
@@ -196,7 +208,7 @@ main .content .advantage .advantage-item p {
 
 footer {
   width: 100%;
-  background: var(--fundo-branco);
+  background: var(--fundo-secundario);
   padding: 4rem;
   text-align: center;
 }
